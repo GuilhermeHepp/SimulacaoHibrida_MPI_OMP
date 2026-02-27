@@ -1,20 +1,21 @@
-## 👨‍💻 Autor
+## Autor
 
-**Guilherme Hepp da Fonseca** 
-*Estudante de Ciência da Computação - Universidade Federal de Pelotas (UFPel)*
+* **Nome:** Guilherme Hepp da Fonseca
+* **Matrícula:** 22202588
+* **Email:** ghfonseca@inf.ufpel.edu.br
 
 # Simulação Distribuída de Agentes (MPI + OpenMP) 🚀
 
 Este projeto é uma simulação híbrida e distribuída desenvolvida como trabalho final para a disciplina de **Processamento Paralelo e Distribuído**. O sistema modela um ecossistema com agentes autônomos disputando recursos naturais em um grid espacial massivo, utilizando arquiteturas de memória distribuída (MPI) e memória compartilhada (OpenMP).
 
-## 🧠 Arquitetura Híbrida
+## Arquitetura Híbrida
 
 A simulação foi projetada para extrair o máximo de desempenho do hardware através de dois níveis de paralelismo:
 
 1. **Paralelismo Inter-nó (MPI):** O território global (grid) é particionado horizontalmente. Cada processo do MPI gerencia um subgrid independente, comunicando-se com seus vizinhos exclusivamente para a troca de fronteiras (Ghost Cells / Halos) e migração de agentes utilizando `MPI_Sendrecv`.
 2. **Paralelismo Intra-nó (OpenMP):** Dentro de cada subgrid, o processamento da lógica de decisão dos agentes e o consumo de recursos é distribuído entre múltiplas *threads*. Utilizamos diretivas como `#pragma omp parallel for schedule(dynamic)` para garantir o balanceamento dinâmico de carga.
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 * **C (GCC)**
 * **OpenMPI** (Message Passing Interface)
@@ -29,7 +30,7 @@ sudo apt update
 sudo apt install build-essential libopenmpi-dev openmpi-bin
 ```
 
-## 🚀 Como Compilar e Executar
+## Como Compilar e Executar
 
 ### Compilação
 Utilize o compilador wrapper do MPI habilitando a flag do OpenMP:
@@ -45,7 +46,7 @@ A execução exige a definição do número de threads (variável de ambiente do
 OMP_NUM_THREADS=4 mpirun -np 4 ./simulacao
 ```
 
-## 📊 Análise de Desempenho e Escalabilidade
+## Análise de Desempenho e Escalabilidade
 
 Durante o desenvolvimento, a simulação foi submetida a rigorosos testes de carga e desempenho (Grid de 2000x2000 = 4 milhões de células, com 1000 ciclos de tempo):
 
