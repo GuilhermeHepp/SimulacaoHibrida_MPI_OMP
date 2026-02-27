@@ -6,7 +6,7 @@
 
 # Simulação Distribuída de Agentes (MPI + OpenMP) 🚀
 
-Este projeto é uma simulação híbrida e distribuída desenvolvida como trabalho final para a disciplina de **Processamento Paralelo e Distribuído**. O sistema modela um ecossistema com agentes autônomos disputando recursos naturais em um grid espacial massivo, utilizando arquiteturas de memória distribuída (MPI) e memória compartilhada (OpenMP).
+Este projeto é uma simulação híbrida e distribuída desenvolvida como trabalho final para a disciplina de **Introdução ao Processamento Paralelo e Distribuído**. O sistema modela um ecossistema com agentes autônomos disputando recursos naturais em um grid espacial massivo, utilizando arquiteturas de memória distribuída (MPI) e memória compartilhada (OpenMP).
 
 ## Arquitetura Híbrida
 
